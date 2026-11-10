@@ -7,12 +7,43 @@
     </head>
     <body>
         <script>
-            const compChoice = ["Rock", "Paper", "Scissors"];
-            const compAnswer = Math.floor(Math.random() * compChoice.length);
+            let startingQuestion = prompt("What will you choose? Rock, Paper or Scissors?");
 
-            let humanChoice = prompt("What will you choose? Rock, Paper or Scissors?");
-            let humanAnswer = humanChoice.toLowerCase();
-            // console.log(compChoice[compAnswer]);
+            function getComputerChoice() {
+                let cc = ["rock", "paper", "scissors"];
+                let compAnswer = Math.floor(Math.random() * cc.length);
+                return cc[compAnswer];
+            };
+
+            function getHumanChoice() {
+                let hc = startingQuestion;
+                let humanAnswer = hc.toLowerCase();
+                return humanAnswer;
+            };
+            
+            function playRound(computerChoice, humanChoice) {
+
+                if (humanChoice == 'rock' && computerChoice == 'rock' || humanChoice == 'paper' && computerChoice == 'paper' || humanChoice == 'scissors' && computerChoice == 'scissors') {
+                    console.log(`Oh, it's a draw. you both pulled ${humanChoice}.`);
+                } else if (humanChoice == 'rock' && computerChoice == 'scissors' || humanChoice == 'paper' && computerChoice == 'rock' || humanChoice == 'scissors' && computerChoice == 'paper') {
+                    console.log(`You win! You threw ${humanChoice} and the opponent threw ${computerChoice}.`)
+                } else if (humanChoice == 'rock' && computerChoice == 'paper' || humanChoice == 'paper' && computerChoice == 'scissors' || humanChoice == 'scissors' && computerChoice == 'rock') {
+                    console.log(`Oh, dear, you lose this round! You threw ${humanChoice} and the opponent threw ${computerChoice}.`);
+                } else {
+                    return "You entered a wrong value.";
+                };
+            };
+
+            let hA = getHumanChoice();
+            let cA = getComputerChoice();
+            let pR = playRound(cA,hA);
+
+            function playGame() {
+                return pR;
+            };
+
+            let pG = playGame();
+            console.log(pG);
         </script> 
     </body>
 </html>
