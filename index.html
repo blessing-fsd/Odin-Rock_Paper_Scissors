@@ -40,10 +40,8 @@
                 if (round <= 5) {
                     const humanPick = getHumanChoice();
                     const computerPick = getComputerChoice();
-
-                    round += 1;
                     playRound(computerPick, humanPick);
-
+                    round += 1;
                     playGame();
                 } else {
                     if (humanScore > computerScore) {
@@ -65,14 +63,13 @@
                             round = 1;
                             humanScore = 0;
                             computerScore = 0;
-                            playRound(computerPick, humanPick);
                             playGame();
                         } else {
                             console.log("Kay, catch you later!");
                         };
                     } else {
                         console.log("Somehow it's a draw.")
-                    }
+                    };
                 };
             };
 
