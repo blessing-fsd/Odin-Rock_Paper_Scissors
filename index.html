@@ -50,7 +50,7 @@
                         let finalWordWin = prompt(`You Win! The Final score is H:${humanScore} - C:${computerScore}. Would you like to go again? Yes or No.`);
                         let whoc = finalWordWin.toLowerCase();
                         if (whoc === 'yes') {
-                            round = 0;
+                            round = 1;
                             humanScore = 0;
                             computerScore = 0;
                             playGame();
@@ -62,7 +62,7 @@
                         let finalWordLose = prompt(`You Lose! The Final score is H:${humanScore} - C:${computerScore}. Would you like to go again? Yes or No.`);
                         let lhoc = finalWordLose.toLowerCase();
                         if (lhoc === 'yes') {
-                            round = 0;
+                            round = 1;
                             humanScore = 0;
                             computerScore = 0;
                             playRound(computerPick, humanPick);
